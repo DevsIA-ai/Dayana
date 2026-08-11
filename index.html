@@ -341,34 +341,6 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
 .map-address small { display:block; font-size:.7rem; color:var(--text-muted); font-family:var(--sans); margin-top:.15rem; }
 
 /* ==============================
-   ITINERARY
-   ============================== */
-#itinerary { background:var(--white); }
-.timeline {
-  max-width:580px; margin:3.5rem auto 0;
-  padding-left:2rem; position:relative;
-}
-.timeline::before {
-  content:''; position:absolute;
-  left:5px; top:10px; bottom:10px; width:1px;
-  background:linear-gradient(180deg,transparent,var(--gold-light) 8%,var(--gold-light) 92%,transparent);
-}
-.tl-item { position:relative; padding-left:1.75rem; margin-bottom:2.5rem; }
-.tl-item:last-child { margin-bottom:0; }
-.tl-dot {
-  position:absolute; left:-.42rem; top:.3rem;
-  width:12px; height:12px; border-radius:50%;
-  background:var(--rose); border:3px solid var(--white);
-  box-shadow:0 0 0 1.5px var(--rose);
-}
-.tl-time {
-  display:block; font-size:.56rem; letter-spacing:.38em;
-  text-transform:uppercase; color:var(--rose-dark); margin-bottom:.3rem;
-}
-.tl-title { font-family:var(--serif); font-size:1.35rem; font-weight:300; color:var(--text); margin-bottom:.3rem; }
-.tl-desc  { font-size:.8rem; color:var(--text-muted); line-height:1.65; }
-
-/* ==============================
    GALLERY (placeholders, sin fotos)
    ============================== */
 #gallery {
@@ -809,7 +781,6 @@ body.env-open { overflow:hidden; }
   <button class="nav-dot" onclick="goTo('countdown')"></button>
   <button class="nav-dot" onclick="goTo('familia')"></button>
   <button class="nav-dot" onclick="goTo('details')"></button>
-  <button class="nav-dot" onclick="goTo('itinerary')"></button>
   <button class="nav-dot" onclick="goTo('gallery')"></button>
   <button class="nav-dot" onclick="goTo('dresscode')"></button>
   <button class="nav-dot" onclick="goTo('gifts')"></button>
@@ -935,12 +906,12 @@ body.env-open { overflow:hidden; }
       <div class="familia-card reveal">
         <div class="familia-icon">✦</div>
         <p class="familia-lbl">Mis Papás</p>
-        <p class="familia-name">Salvador Acosta<br>Nancy Trejo</p>
+        <p class="familia-name">Salvador Acosta Molina<br>Nancy Adriana Trejo Medina</p>
       </div>
       <div class="familia-card reveal d1">
         <div class="familia-icon">✦</div>
-        <p class="familia-lbl">Mi Padrino</p>
-        <p class="familia-name">José Acosta Molina</p>
+        <p class="familia-lbl">Padrinos de Bautizo</p>
+        <p class="familia-name">José Acosta Molina<br>Zulema Acosta</p>
       </div>
     </div>
   </div>
@@ -1028,31 +999,6 @@ body.env-open { overflow:hidden; }
   </div>
 </section>
 
-<!-- ======================== ITINERARY ======================== -->
-<section id="itinerary">
-  <div class="container" style="text-align:center">
-    <img src="icon-arco.png" alt="" class="theme-icon reveal">
-    <span class="eyebrow reveal">Programa del Día</span>
-    <h2 class="section-title reveal">El <em>itinerario</em></h2>
-    <div class="divider-line"></div>
-
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-time">16:00 hrs</span>
-        <h3 class="tl-title">Misa</h3>
-        <p class="tl-desc">Parroquia Sagrado Corazón de Jesús</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-time">21:00 hrs</span>
-        <h3 class="tl-title">Recepción</h3>
-        <p class="tl-desc">Salón Sol y Luna</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ======================== GALLERY ======================== -->
 <section id="gallery">
   <div class="container--wide" style="text-align:center">
@@ -1074,22 +1020,17 @@ body.env-open { overflow:hidden; }
 <section id="dresscode">
   <div class="container">
     <span class="eyebrow reveal">Código de Vestimenta</span>
-    <h2 class="section-title reveal">Etiqueta <em>formal</em></h2>
+    <h2 class="section-title reveal">Vestimenta </h2>
     <div class="divider-line"></div>
     <img src="detalle-merida.png" alt="" class="theme-img reveal" style="margin-top:1rem">
-    <div class="dress-badge reveal">✦ Etiqueta Formal ✦</div>
-
-    <p class="dresscode-note reveal" style="margin-bottom:1rem">
-      Damas: vestido largo o cóctel elegante.<br>
-      Caballeros: traje formal.
-    </p>
+    <div class="dress-badge reveal">✦ Formal ✦</div>
 
     <div class="avoid-pill reveal">⚠ Evita estos tonos · reservados para la quinceañera</div>
 
     <div class="swatches reveal">
       <div class="swatch">
-        <div class="swatch-circle" style="background:#1f7a5c"></div>
-        <span class="swatch-name">Verde</span>
+        <div class="swatch-circle" style="background:linear-gradient(135deg,#0d4a37,#4fa06f 45%,#a8d5b0 75%,#dcefdd)"></div>
+        <span class="swatch-name">Cualquier Verde</span>
       </div>
       <div class="swatch">
         <div class="swatch-circle" style="background:#c9a96e"></div>
@@ -1106,6 +1047,7 @@ body.env-open { overflow:hidden; }
 <!-- ======================== GIFTS ======================== -->
 <section id="gifts">
   <div class="container" style="text-align:center">
+    <img src="icon-arco.png" alt="" class="theme-icon reveal">
     <span class="eyebrow reveal">Regalo</span>
     <h2 class="section-title reveal">Tu presencia es <em>el mejor regalo</em></h2>
     <div class="divider-line"></div>
@@ -1303,7 +1245,7 @@ const revObs = new IntersectionObserver(entries => {
 revEls.forEach(el => revObs.observe(el));
 
 /* ---- NAV DOTS ---- */
-const SECS = ['hero','countdown','familia','details','itinerary','gallery','dresscode','gifts','rsvp','contact'];
+const SECS = ['hero','countdown','familia','details','gallery','dresscode','gifts','rsvp','contact'];
 const dots = document.querySelectorAll('.nav-dot');
 function goTo(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
 const secObs = new IntersectionObserver(entries => {
