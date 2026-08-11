@@ -60,7 +60,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
   background: linear-gradient(90deg, transparent, rgba(201,169,110,0.6));
 }
 .divider-orn::after { background: linear-gradient(90deg, rgba(201,169,110,0.6), transparent); }
-.theme-img { display:block; margin:0 auto 1.5rem; width:170px; max-width:60%; height:auto; filter:drop-shadow(0 14px 30px rgba(0,0,0,.28)); }
+.theme-img { display:block; margin:0 auto 1.5rem; width:170px; max-width:60%; height:auto; }
 
 /* REVEAL ANIMATIONS */
 .reveal { opacity:0; transform:translateY(28px); transition: opacity .8s ease, transform .8s ease; }
@@ -134,7 +134,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
 }
 .sparkle-float img { width:38px; height:auto; display:block; opacity:.8; filter:drop-shadow(0 4px 10px rgba(0,0,0,.5)); }
 
-.theme-icon { display:block; margin:0 auto 1rem; width:58px; height:auto; filter:drop-shadow(0 8px 16px rgba(0,0,0,.25)); }
+.theme-icon { display:block; margin:0 auto 1rem; width:58px; height:auto; }
 
 .hero-pre {
   font-size:.6rem; letter-spacing:.5em; text-transform:uppercase;
@@ -373,13 +373,15 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
    ============================== */
 #gallery {
   background:linear-gradient(160deg,var(--dark-mid),var(--dark-warm));
-  padding:2.25rem 2.5rem 4rem; position:relative; overflow:hidden;
+  padding:0 2.5rem 1rem; position:relative; overflow:hidden;
 }
+#gallery .container--wide { padding-top:1.75rem; padding-bottom:1.75rem; }
 #gallery::before {
   content:''; position:absolute; inset:0; pointer-events:none;
   background:radial-gradient(circle at 10% 90%,rgba(31,122,92,.12) 0%,transparent 40%),
              radial-gradient(circle at 90% 10%,rgba(201,169,110,.08) 0%,transparent 40%);
 }
+#gallery .eyebrow { color:var(--gold-light); }
 #gallery .section-title { color:rgba(255,255,255,.9); }
 #gallery .section-title em { color:var(--gold-light); }
 .gallery-grid {
@@ -1039,43 +1041,13 @@ body.env-open { overflow:hidden; }
         <div class="tl-dot"></div>
         <span class="tl-time">16:00 hrs</span>
         <h3 class="tl-title">Misa</h3>
-        <p class="tl-desc">El inicio de esta celebración, en la Parroquia Sagrado Corazón de Jesús</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-time">17:00 hrs</span>
-        <h3 class="tl-title">Sesión de Fotos</h3>
-        <p class="tl-desc">Capturando mi propia leyenda, como en un cuento de tierras altas</p>
+        <p class="tl-desc">Parroquia Sagrado Corazón de Jesús</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <span class="tl-time">21:00 hrs</span>
-        <h3 class="tl-title">Recepción de Invitados</h3>
-        <p class="tl-desc">Bienvenida en el Salón Sol y Luna</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-time">21:30 hrs</span>
-        <h3 class="tl-title">Vals y Cambio de Zapatilla</h3>
-        <p class="tl-desc">El momento más esperado de la noche</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-time">22:00 hrs</span>
-        <h3 class="tl-title">Cena y Brindis</h3>
-        <p class="tl-desc">Mesa de manjares y palabras de quienes más quiero</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-time">23:00 hrs</span>
-        <h3 class="tl-title">Fiesta y Baile Sorpresa</h3>
-        <p class="tl-desc">La aventura apenas comienza, pista de baile lista toda la noche</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <span class="tl-time">01:00 hrs</span>
-        <h3 class="tl-title">Cierre Mágico</h3>
-        <p class="tl-desc">Despedida con recuerdo especial para cada invitado</p>
+        <h3 class="tl-title">Recepción</h3>
+        <p class="tl-desc">Salón Sol y Luna</p>
       </div>
     </div>
   </div>
@@ -1112,9 +1084,8 @@ body.env-open { overflow:hidden; }
       Caballeros: traje formal.
     </p>
 
-    <p class="dresscode-note reveal" style="margin-top:1.75rem;margin-bottom:1rem">
-      Evita estos colores, son exclusivos de la quinceañera:
-    </p>
+    <div class="avoid-pill reveal">⚠ Evita estos tonos · reservados para la quinceañera</div>
+
     <div class="swatches reveal">
       <div class="swatch">
         <div class="swatch-circle" style="background:#1f7a5c"></div>
@@ -1129,7 +1100,6 @@ body.env-open { overflow:hidden; }
         <span class="swatch-name">Champán</span>
       </div>
     </div>
-    <div class="avoid-pill reveal">⚠ Evita estos tonos · reservados para la quinceañera</div>
   </div>
 </section>
 
@@ -1158,7 +1128,7 @@ body.env-open { overflow:hidden; }
 <!-- ======================== RSVP ======================== -->
 <section id="rsvp">
   <div class="container">
-    <img src="icon-blanco.png" alt="" class="theme-icon reveal" style="filter:drop-shadow(0 8px 20px rgba(0,0,0,.55))">
+    <img src="icon-blanco.png" alt="" class="theme-icon reveal">
     <span class="eyebrow reveal">Confirmación de Asistencia</span>
     <h2 class="section-title reveal">¿Me <em style="color:var(--rose-light)">acompañas?</em></h2>
     <div class="divider-line" style="background:linear-gradient(90deg,transparent,rgba(31,122,92,.4),transparent)"></div>
@@ -1175,7 +1145,7 @@ body.env-open { overflow:hidden; }
 <!-- ======================== CONTACT ======================== -->
 <section id="contact">
   <div class="container">
-    <img src="detalle-silueta.png" alt="" class="theme-img reveal" style="width:150px;filter:none">
+    <img src="detalle-silueta.png" alt="" class="theme-img reveal" style="width:150px">
     <span class="eyebrow reveal">¿Tienes dudas?</span>
     <h2 class="section-title reveal">Con<em>tacto</em></h2>
     <div class="divider-line"></div>
@@ -1209,7 +1179,7 @@ body.env-open { overflow:hidden; }
 
 <!-- FOOTER -->
 <footer>
-  <img src="detalle-osos.png" alt="" class="theme-img" style="width:130px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.5))">
+  <img src="detalle-osos.png" alt="" class="theme-img" style="width:130px">
   <p class="footer-names">Dayana <span style="font-size:.5em">Ximena</span></p>
   <p class="footer-date">19 · 09 · 2026 · La Junta, Chihuahua</p>
   <p style="font-family:var(--serif);font-style:italic;color:rgba(207,232,220,.55);font-size:.95rem;margin-bottom:1.25rem">Que comience la aventura ✦ Sé valiente</p>
