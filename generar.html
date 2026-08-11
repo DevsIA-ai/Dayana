@@ -211,11 +211,6 @@
     </select>
   </div>
 
-  <div class="form-group">
-    <label>Mesa <span style="text-transform:none;letter-spacing:0;opacity:.7">(opcional)</span></label>
-    <input type="text" id="inputMesa" placeholder="Ej: 5" autocomplete="off">
-  </div>
-
   <button class="btn-generar" onclick="generar()">Generar Invitación &nbsp;✦</button>
 
   <!-- Resultado -->
@@ -246,7 +241,6 @@
     var tipoLabel = TIPO_LABELS[tipo] || 'Familia';
     var familia = document.getElementById('inputFamilia').value.trim();
     var boletos = document.getElementById('inputBoletos').value;
-    var mesa = document.getElementById('inputMesa').value.trim();
 
     if(!familia){
       document.getElementById('inputFamilia').focus();
@@ -262,7 +256,6 @@
       base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/index.html');
     }
     urlGenerada = base + '?f=' + encodeURIComponent(familia) + '&b=' + boletos + '&t=' + tipo;
-    if(mesa) urlGenerada += '&m=' + encodeURIComponent(mesa);
 
     var n = parseInt(boletos, 10);
     var personas = n === 1 ? 'PERSONA' : 'PERSONAS';
@@ -270,13 +263,13 @@
       '¡Hola! ✨ ' + tipoLabel + ' ' + familia + '\n' +
       'Te invito a mis XV años.👸\n' +
       'Espero poder contar con tu presencia.💐\n\n' +
-      'PASE PARA ' + n + ' ' + personas + ' 🎟️' + (mesa ? ' · Mesa ' + mesa : '') + '\n' +
+      'PASE PARA ' + n + ' ' + personas + ' 🎟️\n' +
       'Click para ver la invitación.💌\n' +
       urlGenerada + '\n\n' +
       'Por favor confirma tu asistencia.';
 
     document.getElementById('resFamilyName').textContent = tipoLabel + ' ' + familia;
-    document.getElementById('resBoletosText').textContent = n + (n === 1 ? ' boleto' : ' boletos') + (mesa ? ' · Mesa ' + mesa : '');
+    document.getElementById('resBoletosText').textContent = n + (n === 1 ? ' boleto' : ' boletos');
     document.getElementById('resMensaje').textContent = mensajeGenerado;
 
     var res = document.getElementById('resultado');
@@ -306,7 +299,6 @@
     document.getElementById('inputTipo').value = 'familia';
     document.getElementById('inputFamilia').value = '';
     document.getElementById('inputBoletos').value = '3';
-    document.getElementById('inputMesa').value = '';
     document.getElementById('resultado').classList.remove('visible');
     window.scrollTo({ top:0, behavior:'smooth' });
     document.getElementById('inputFamilia').focus();
